@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+title: Rad blog
+eleventyNavigation:
+  key: Home
+  weight: 0
+---
+
+{% block content %}
+<div class="container">
+  {% include 'components/postlist.njk' %}
+</div>
+{% endblock %}

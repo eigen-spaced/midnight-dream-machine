@@ -1,0 +1,28 @@
+.card-list
+  display: grid
+  gap: 12px
+  grid-column: 1fr
+
+.card
+  display: flex
+  justify-content: space-between
+
+  &-left
+    display: flex
+    flex-direction: column
+
+    &__title
+      font-size: 2rem
+
+  &-right
+    display: flex
+
+    &__tag-container
+      display: flex
+      align-items: center
+
+    &__tag-list
+      display: flex
+
+    &__date
+      align-self: flex-end

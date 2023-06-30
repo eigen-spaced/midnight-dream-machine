@@ -1,0 +1,11 @@
+{% set navPages = collections.all | eleventyNavigation %}
+<nav class="navbar">
+  <span>The Midnight Dream Machine</span>
+  <div class="navbar__menu">
+    {% for pageLink in navPages %}
+    <a class="navbar__link {% if pageLink.url == page.url %}navbar__link--active{% endif %}"
+      href="{{ pageLink.url | url }}">{{
+      pageLink.title }}</a>
+    {% endfor %}
+  </div>
+</nav>

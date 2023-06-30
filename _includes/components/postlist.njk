@@ -1,0 +1,24 @@
+<div class="card-list">
+  {% for post in collections.posts %}
+  <div class="card">
+    <!-- <a>{{ title }}</a> -->
+    <div class="card-left">
+
+      <a href="{{ post.url }}" class="card-left__title">{{ post.data.title }}</a>
+      <div class="card-right__tag-container">
+        <p>Filed under: </p>
+        <div class="card-left__tag-list">
+          {% for tag in post.data.tags %}
+          <span href="#">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="card-right">
+      <p class="card-right__date">{{ post.date | readableDate }}</p>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
