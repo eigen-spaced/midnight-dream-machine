@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:stylus": "stylus --compress ./stylus/ --out ./static/css/",
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
+    "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve",
+    "build": "npm run build:stylus && npm run build:11ty",
     "dev": "concurrently -n stylus,11ty \"npm:watch:stylus\" \"npm:watch:11ty\""
   },
   "keywords": [],
