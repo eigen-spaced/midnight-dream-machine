@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.njk
-title: Rad blog
 ---
 
 {% block content %}
 
 <div class="reading-container">
+  <h2>{{ title }}</h2>
   {{ content | safe }}
 </div>
 {% endblock %}

@@ -10,6 +10,14 @@ headerSizes = {
     h6: 0.875
 }
 
+p {
+  font-size: 1.1rem;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
 for element, size in headerSizes
     {element}
         font-size: (size)rem

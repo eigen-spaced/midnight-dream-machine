@@ -4,7 +4,7 @@ description: All about me in this page
 layout: layouts/base.njk
 hideTagsList: true
 eleventyNavigation:
-  key: About
+  key: about
   weight: 1
 ---
 

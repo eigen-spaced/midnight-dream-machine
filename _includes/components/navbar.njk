@@ -4,8 +4,8 @@
   <div class="navbar__menu">
     {% for pageLink in navPages %}
     <a class="navbar__link {% if pageLink.url == page.url %}navbar__link--active{% endif %}"
-      href="{{ pageLink.url | url }}">{{
-      pageLink.title }}</a>
+      href="{{ pageLink.url | url }}">
+      {{ pageLink.title }}</a>
     {% endfor %}
   </div>
 </nav>

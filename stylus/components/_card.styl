@@ -11,18 +11,31 @@
     display: flex
     flex-direction: column
 
-    &__title
+    .title
       font-size: 2rem
+      color: nord0
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+    
+    .tag-container
+      display: flex
+      align-items: center
+
+    .tag-list
+      display: inline-flex
+      gap: 0.7rem
+
+      .tag-item
+        background: nord7
+
 
   &-right
     display: flex
 
-    &__tag-container
-      display: flex
-      align-items: center
-
-    &__tag-list
-      display: flex
-
     &__date
       align-self: flex-end
+
+.tag-container
+  margin: 0.5rem 0
