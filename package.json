@@ -8,8 +8,8 @@
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve",
-    "build": "npm run build:stylus && npm run build:11ty",
-    "dev": "concurrently -n stylus,11ty \"npm:watch:stylus\" \"npm:watch:11ty\""
+    "build": "pnpm run build:stylus && npm run build:11ty",
+    "dev": "concurrently -n stylus,11ty \"pnpm:watch:stylus\" \"pnpm:watch:11ty\""
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "concurrently": "^9.0.1",
     "prettier": "3.3.3",
-    "prettier-plugin-jinja-template": "^2.0.0"
+    "prettier-plugin-jinja-template": "^2.0.0",
+    "stylus": "^0.63.0"
   },
   "dependencies": {
     "luxon": "^3.5.0"
