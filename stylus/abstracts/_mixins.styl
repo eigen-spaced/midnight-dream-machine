@@ -1,0 +1,10 @@
+centered-width()
+  margin-left: auto
+  margin-right: auto
+  padding-left: 3rem
+  padding-right: 3rem
+  width: clamp(90%, 60%, 60vw)
+  max-width: 1200px /* Optional cap for large screens */
+
+  @media (max-width: 768px)
+    width: 100vw

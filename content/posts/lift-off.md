@@ -1,5 +1,6 @@
 ---
-title: "Chapter 5: Lift off"
+title: Chapter 5 - Lift off
+header: Chapter 5 - Lift off
 date: Last Modified
 tags:
   - musings

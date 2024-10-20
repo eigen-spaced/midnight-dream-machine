@@ -1,0 +1,26 @@
+<section class="card-list">
+  {% for post in collections.posts | reverse %}
+    <article class="card">
+      <!-- <a>{{ title }}</a> -->
+      <div class="card-left">
+        <span class="date">{{ post.date | readableDate }}</span>
+      </div>
+
+      <div class="card-right">
+        <a href="{{ post.url }}" class="card-link">{{ post.data.title }}</a>
+        <div class="title">{{ post.data.title }}</div>
+        <section class="card-right__footer">
+          <div class="read-more-cta">Read more</div>
+          <div class="tag-container">
+            <span>Filed under:&nbsp;</span>
+            <div class="tag-list">
+              {% for tag in post.data.tags | filterTagList %}
+                <span href="#" class="tag-item">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  {% endfor %}
+</section>

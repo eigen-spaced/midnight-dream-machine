@@ -1,8 +1,15 @@
 .navbar
-  display: flex
-  justify-content: space-between
-  padding: 2rem 5rem
   font-size: 1.2rem
+  color: #fff
+
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    background: container-bg
+    padding-top: 1.1rem
+    padding-bottom: 1.1rem
+
+    centered-width()
 
   &__menu
     display: inline-flex
@@ -11,7 +18,7 @@
 
   &__link
     text-decoration: none
-    color: #000
+    color: #fff
     padding: 0.1rem 0.5rem
 
     &:hover

@@ -1,37 +1,42 @@
-const { DateTime } = require("luxon");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { DateTime } = require("luxon")
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation")
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(syntaxHighlightPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin)
+  eleventyConfig.addPlugin(syntaxHighlightPlugin)
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL, yyyy"
-    );
-  });
+      "dd LLL, yyyy",
+    )
+  })
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd-LL-yyyy");
-  });
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd-LL-yyyy")
+  })
 
   // Output directory: _site
-  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("static")
+
+  // Define a filter to get the current year
+  eleventyConfig.addFilter("currentYear", () => {
+    return new Date().getFullYear()
+  })
 
   eleventyConfig.addFilter("getAllTags", (collection) => {
-    let tagSet = new Set();
+    let tagSet = new Set()
     for (let item of collection) {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+      ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
     }
-    return Array.from(tagSet);
-  });
+    return Array.from(tagSet)
+  })
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     return (tags || []).filter(
-      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
-    );
-  });
+      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
+    )
+  })
 
   return {
     dir: {
@@ -40,5 +45,5 @@ module.exports = function (eleventyConfig) {
       data: "../_data", // default: "_data"
       output: "_site",
     },
-  };
-};
+  }
+}
