@@ -8,7 +8,7 @@
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve",
-    "build": "pnpm run build:stylus && npm run build:11ty",
+    "build": "npx stylus --compress ./stylus/ --out ./static/css/ && npx @11ty/eleventy",
     "dev": "concurrently -n stylus,11ty \"pnpm:watch:stylus\" \"pnpm:watch:11ty\""
   },
   "keywords": [],
